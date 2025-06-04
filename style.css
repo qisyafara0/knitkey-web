@@ -1,0 +1,189 @@
+:root {
+    --knitkey-primary: #D2985D; /* Oranye/Coklat Karamel - dari gulungan benang */
+    --knitkey-secondary: #8B9A6B; /* Hijau Sage - dari kancing hijau */
+    --knitkey-text-dark: #343a40; /* Abu gelap - sangat baik untuk teks */
+    --knitkey-text-light: #ffffff; /* Putih */
+    /* Tambahan: Variabel untuk warna abu-abu terang jika diperlukan untuk background */
+    --knitkey-bg-light: #f8f9fa; /* Sama dengan section:nth-of-type(even) */
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--knitkey-text-dark);
+    padding-top: 56px; /* Agar konten tidak tertutup navbar sticky */
+}
+@media (min-width: 992px) {
+    body {
+        padding-top: 0;
+    }
+}
+
+/* Navbar Styling */
+.navbar-brand img {
+    height: 40px; 
+    margin-right: 10px;
+}
+.navbar-brand .fw-bold {
+    color: var(--knitkey-text-dark); /* Tetap abu gelap, cocok untuk nama brand */
+}
+.navbar-nav .nav-link {
+    color: var(--knitkey-text-dark); /* Tetap abu gelap */
+    font-weight: 500;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: var(--knitkey-primary); /* Menggunakan warna primary (karamel) untuk hover/active link */
+}
+
+/* WhatsApp Button in Navbar */
+/* TETAP TIDAK DIUBAH SESUAI PERMINTAAN */
+.whatsapp-link {
+    background-color: #25D366; /* Hijau WhatsApp asli */
+    color: var(--knitkey-text-light);
+    border-radius: 5px;
+    padding: 8px 15px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+}
+.whatsapp-link:hover {
+    background-color: #1DA851; /* Hover hijau WhatsApp asli */
+    color: var(--knitkey-text-light);
+}
+
+/* Hero Section Styling */
+.hero-section {
+    /* Menggunakan var(--knitkey-primary) untuk mengganti warna latar belakang placeholder */
+    /* Jika Anda punya gambar asli, ganti URL di sini */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1500x600/D2985D/FFFFFF?text=KnitKey+Banner'); /* Menggunakan warna primary */
+    background-size: cover;
+    background-position: center;
+    color: var(--knitkey-text-dark);
+    padding: 120px 0;
+    text-align: center;
+}
+.hero-section h1 {
+    font-size: 3.8rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+.hero-section p.lead {
+    font-size: 1.35rem;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hero-section .btn-primary-knitkey { /* Ganti .btn agar lebih spesifik */
+    background-color: var(--knitkey-primary); /* Menggunakan primary untuk tombol utama */
+    color: var(--knitkey-text-light);
+    border: 1px solid var(--knitkey-primary);
+    font-size: 1.15rem;
+    padding: 12px 30px;
+    border-radius: 50px; /* Tombol lebih bulat */
+    font-weight: 600;
+    transition: transform 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+.hero-section .btn-primary-knitkey:hover {
+    transform: translateY(-3px);
+    background-color: #b77f4c; /* Sedikit lebih gelap dari primary saat hover */
+    border-color: #b77f4c;
+    color: var(--knitkey-text-light);
+}
+/* Jika ada tombol secondary di hero section */
+.hero-section .btn-secondary-knitkey {
+    background-color: var(--knitkey-secondary); /* Menggunakan secondary untuk tombol kedua jika ada */
+    color: var(--knitkey-text-light); /* Atau var(--knitkey-text-dark) tergantung kontras */
+    border: 1px solid var(--knitkey-secondary);
+    font-size: 1.15rem;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.2s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+.hero-section .btn-secondary-knitkey:hover {
+    transform: translateY(-3px);
+    background-color: #728258; /* Sedikit lebih gelap dari secondary saat hover */
+    border-color: #728258;
+    color: var(--knitkey-text-light);
+}
+
+
+/* Section Styling Umum */
+section {
+    padding: 60px 0;
+}
+section:nth-of-type(even) { /* Background bergantian untuk section */
+    background-color: var(--knitkey-bg-light); /* Menggunakan variabel baru */
+}
+h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--knitkey-text-dark); /* Tetap abu gelap */
+}
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 250px; /* Ukuran gambar produk konsisten */
+    object-fit: cover; /* Pastikan gambar mengisi ruang tanpa distorsi */
+}
+.card-title {
+    font-weight: bold;
+    color: var(--knitkey-text-dark); /* Tetap abu gelap */
+}
+/* Penyesuaian untuk tombol CTA di dalam card */
+.btn-primary-card { /* Tambahkan class spesifik jika ingin tombol ini berbeda dari hero */
+    background-color: var(--knitkey-primary); /* Menggunakan primary untuk tombol utama di card */
+    color: var(--knitkey-text-light);
+    border: 1px solid var(--knitkey-primary);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.btn-primary-card:hover {
+    background-color: #b77f4c; /* Sedikit lebih gelap dari primary saat hover */
+    border-color: #b77f4c;
+    color: var(--knitkey-text-light);
+}
+
+/* Mengubah .btn-outline-success agar lebih selaras, namun tidak mengubah WhatsApp */
+/* Jika tombol ini *bukan* WhatsApp, kita bisa selaraskan dengan secondary */
+.btn-outline-secondary-knitkey { /* Ubah nama class agar tidak berbenturan dengan hijau WhatsApp */
+    border-color: var(--knitkey-secondary); /* Menggunakan warna secondary (hijau sage) */
+    color: var(--knitkey-secondary);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.btn-outline-secondary-knitkey:hover {
+    background-color: var(--knitkey-secondary);
+    color: var(--knitkey-text-light); /* Teks putih saat hover */
+}
+
+
+/* Footer Styling */
+footer {
+    background-color: var(--knitkey-text-dark); /* Tetap abu gelap */
+    color: var(--knitkey-text-light); /* Tetap putih */
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+footer a {
+    color: var(--knitkey-primary); /* Menggunakan primary (karamel) untuk link di footer */
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
